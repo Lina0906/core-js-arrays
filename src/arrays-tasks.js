@@ -441,8 +441,11 @@ function getIdentityMatrix(n) {
  *    getIndicesOfOddNumbers([11, 22, 33, 44, 55]) => [0, 2, 4]
  */
 function getIndicesOfOddNumbers(numbers) {
-  return numbers.reduce((accumulator, currentValue, index) => {
-    return currentValue % 2 !== 0 ? accumulator.push(index) : 0;
+  return numbers.reduce((newArr, currentValue, index) => {
+    if (currentValue % 2 !== 0) {
+      newArr.push(index);
+    }
+    return newArr;
   }, []);
 }
 
